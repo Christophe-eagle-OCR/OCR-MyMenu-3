@@ -1,6 +1,5 @@
 package com.ocr.anthony;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Order {
@@ -40,8 +39,32 @@ public class Order {
     public void runMenu() {
         this.displayAvailableMenu();
         Scanner sc = new Scanner(System.in);
-        int nb = sc.nextInt();
-        this.displaySelectedMenu(nb);
+        int nbMenu = sc.nextInt();
+        this.displaySelectedMenu(nbMenu);
+        switch (nbMenu) {
+            case 1:
+                displayAvailableSide(true);
+                int nbSide = sc.nextInt();
+                displaySelectedSide(nbSide, true);
+                displayAvailableDrink();
+                int nbDrink = sc.nextInt();
+                displaySelectedDrink(nbDrink);
+                break;
+            case 2:
+                displayAvailableSide(true);
+                nbSide = sc.nextInt();
+                displaySelectedSide(nbSide, true);
+                break;
+            case 3:
+                displayAvailableSide(false);
+                nbSide = sc.nextInt();
+                displaySelectedSide(nbSide, false);
+                displayAvailableDrink();
+                nbDrink = sc.nextInt();
+                displaySelectedDrink(nbDrink);
+                break;
+        }
+
     }
     /**
      * Display a selected side depending on all sides enable or not.
@@ -118,7 +141,7 @@ public class Order {
             System.out.println("1 - riz");
             System.out.println("2 - pas de riz");
         }
-        System.out.println("que souhaitez-vous comme accompagement");
+        System.out.println("que souhaitez-vous comme accompagement ?");
     }
 
     /**
@@ -129,6 +152,6 @@ public class Order {
         System.out.println("1 - eau plate");
         System.out.println("2 - eau gazeuse");
         System.out.println("3 - soda");
-        System.out.println("Que souhaitez-vous commme boisson");
+        System.out.println("Que souhaitez-vous commme boisson ?");
     }
 }
