@@ -1,5 +1,6 @@
 package com.ocr.anthony;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Order {
@@ -99,5 +100,35 @@ public class Order {
                 System.out.println("Vous n'avez pas choisi de boisson parmi les choix proposés");
                 break;
         }
+    }
+
+    /**
+     * Display all available sides depending on all sides enable or not
+     * All sides = vegetables , frites and rice
+     * No all sides = rice or not
+     * @param allSidesEnable enable display for all side or not
+     */
+    public void displayAvailableSide(boolean allSidesEnable) {
+        System.out.println("Choix des accompagnements");
+        if (allSidesEnable) {
+            System.out.println("1 - légumes frais");
+            System.out.println("2 - frites");
+            System.out.println("3 - riz");
+        } else  {
+            System.out.println("1 - riz");
+            System.out.println("2 - pas de riz");
+        }
+        System.out.println("que souhaitez-vous comme accompagement");
+    }
+
+    /**
+     * Display all available drink in the restaurant
+     */
+    public void displayAvailableDrink() {
+        System.out.println("Choix boissons");
+        System.out.println("1 - eau plate");
+        System.out.println("2 - eau gazeuse");
+        System.out.println("3 - soda");
+        System.out.println("Que souhaitez-vous commme boisson");
     }
 }
